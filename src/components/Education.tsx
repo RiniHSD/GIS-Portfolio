@@ -6,20 +6,20 @@ const Education = () => {
   const education = [
     {
       degree: "Bachelor's Degree in Geographic Information Systems",
-      institution: "University of Technology",
+      institution: "Universitas Gadjah Mada",
       location: "Indonesia",
-      period: "2019 - 2023",
+      period: "2021 - 2025",
       description: "Specialized in spatial data analysis, cartography, and GIS software development. Graduated with honors focusing on mobile GIS applications and geospatial database management.",
       highlights: ["Spatial Data Analysis", "Cartographic Design", "GIS Programming", "Remote Sensing"]
     },
-    {
-      degree: "Mobile App Development Certification",
-      institution: "Tech Academy",
-      location: "Online",
-      period: "2022",
-      description: "Comprehensive certification covering React Native, iOS, and Android development with focus on location-based services and mapping applications.",
-      highlights: ["React Native", "iOS Development", "Android Development", "Location Services"]
-    }
+    // {
+    //   degree: "Mobile App Development Certification",
+    //   institution: "Tech Academy",
+    //   location: "Online",
+    //   period: "2022",
+    //   description: "Comprehensive certification covering React Native, iOS, and Android development with focus on location-based services and mapping applications.",
+    //   highlights: ["React Native", "iOS Development", "Android Development", "Location Services"]
+    // }
   ];
 
   return (
