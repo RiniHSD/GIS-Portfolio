@@ -1,31 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, MapPin, Code } from 'lucide-react';
+import InteractiveCard from './InteractiveCard';
 
-const Hero = () => {
+const HeroTes = () => {
   const [typedText, setTypedText] = useState('');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const imageRef = useRef(null);
+  const fullText = 'GIS Engineer | Surveyor | Full Stack Developer';
+  const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const fullText = 'GIS Developer & Mobile Development Specialist';
-  
-  // Referensi untuk kartu interaktif
-  const cardRef = useRef(null);
-  const [cardStyle, setCardStyle] = useState({
-    '--pointer-x': '50%',
-    '--pointer-y': '50%',
-    '--rotate-x': '0deg',
-    '--rotate-y': '0deg',
-    '--card-opacity': '0.3',
-    '--behind-gradient': `radial-gradient(
-      farthest-side circle at var(--pointer-x) var(--pointer-y),
-      hsla(266, 100%, 90%, var(--card-opacity)) 4%,
-      hsla(266, 50%, 80%, calc(var(--card-opacity)*0.75)) 10%,
-      hsla(266, 25%, 70%, calc(var(--card-opacity)*0.5)) 50%,
-      hsla(266, 0%, 60%, 0) 100%),
-      radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-      radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
-      conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%)`,
-    '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)'
-  });
 
   // Deteksi perangkat mobile
   useEffect(() => {
@@ -53,39 +37,29 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Efek pergerakan mouse untuk kartu interaktif
-  const handleMouseMove = (e) => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const pointerX = (x / rect.width) * 100;
-      const pointerY = (y / rect.height) * 100;
-      
-      // Hitung rotasi berdasarkan posisi kursor
-      const rotateX = -((pointerY - 50) / 50) * 5;
-      const rotateY = ((pointerX - 50) / 50) * 5;
-      
-      setCardStyle({
-        ...cardStyle,
-        '--pointer-x': `${pointerX}%`,
-        '--pointer-y': `${pointerY}%`,
-        '--rotate-x': `${rotateX}deg`,
-        '--rotate-y': `${rotateY}deg`,
-      });
-    }
-  };
+  // Mouse move effect untuk desktop
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (imageRef.current && !isMobile) {
+        const rect = imageRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Normalisasi posisi (0 sampai 1)
+        const normalizedX = x / rect.width;
+        const normalizedY = y / rect.height;
+        
+        // Hitung rotasi yang benar:
+        const rotationX = (0.5 - normalizedY) * 30; // -15 to 15
+        const rotationY = (normalizedX - 0.5) * 30; // -15 to 15
+        
+        setMousePosition({ x: rotationX, y: rotationY });
+      }
+    };
 
-  const handleMouseLeave = () => {
-    setCardStyle({
-      ...cardStyle,
-      '--pointer-x': '50%',
-      '--pointer-y': '50%',
-      '--rotate-x': '0deg',
-      '--rotate-y': '0deg',
-    });
-  };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [isMobile]);
 
   const socialLinks = [
     { 
@@ -134,14 +108,14 @@ const Hero = () => {
         }}
       />
 
-      {/* Container utama dengan layout grid */}
-      <div className="container mx-auto px-4 md:px-6 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      {/* Container utama dengan layout flex */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
         {/* Bagian Kiri: Konten Teks */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left md:pl-12"
+          className="w-full md:w-1/2 text-center md:text-left md:pl-12"
         >
           {/* Profile Image */}
           <motion.div
@@ -158,14 +132,14 @@ const Hero = () => {
           </motion.div>
 
           {/* Name */}
-          <motion.h3
+          <motion.h1
             className="text-4xl md:text-7xl font-black mb-4 bg-neon-gradient bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             RINI HUSADIYAH
-          </motion.h3>
+          </motion.h1>
 
           {/* Typing Animation */}
           <motion.div
@@ -251,66 +225,36 @@ const Hero = () => {
               transition={{ duration: 0.3 }}
             />
           </motion.button>
+
+          {/* Gambar 3D hanya di mobile - di bawah tombol */}
+          {isMobile && (
+            <motion.div 
+              className="w-full flex justify-center mt-12"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="relative w-full max-w-xs mx-auto">
+                <div className="bg-gray-200 rounded-xl w-full h-[250px] overflow-hidden relative">
+                  {/* Placeholder */}
+                  <img 
+                    src="../assets/Foto.JPG" 
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 border-4 border-cyber-cyan/30 rounded-xl pointer-events-none" />
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
-        {/* Bagian Kanan: Kartu Interaktif Sederhana */}
-        <div className="md:col-span-6">
-          <div 
-            ref={cardRef}
-            className="pc-card-wrapper w-full max-w-md mx-auto"
-            style={cardStyle}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div 
-              className="pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl transition-all duration-500 aspect-square"
-              style={{
-                transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                background: 'var(--behind-gradient)',
-              }}
-            >
-              <div className="pc-inside relative h-full w-full">
-                <div 
-                  className="pc-shine absolute inset-0"
-                  style={{
-                    background: 'var(--inner-gradient)',
-                    mask: 'linear-gradient(white, transparent 70%)',
-                  }}
-                />
-                
-                <div 
-                  className="pc-glare absolute inset-0"
-                  style={{
-                    background: 'radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), #ffffff44, #00000022)',
-                  }}
-                />
-                
-                <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
-                  {/* Foto Profil - PATH SUDAH DIPERBAIKI */}
-                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
-                    <img 
-                      className="w-full h-full object-cover"
-                      src="../assets/Foto.JPG" 
-                      alt="Rini Husadiyah" 
-                    />
-                  </div>
-                  
-                  {/* Tombol Unduh CV */}
-                  <a 
-                    href="../assets/CV_RiniHusadiyah.pdf"
-                    download
-                    className="mt-10 px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium transition-all hover:bg-white/20 border border-white/30"
-                    style={{
-                      boxShadow: '0 4px 20px rgba(0, 255, 255, 0.3)'
-                    }}
-                  >
-                    Download CV
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Gambar 3D hanya di desktop */}
+        {!isMobile && (
+            <motion.div className="w-full md:w-1/2 flex justify-center">
+                <InteractiveCard />
+            </motion.div>
+            )}
       </div>
 
       {/* Scroll Indicator - Sembunyikan di mobile */}
@@ -338,4 +282,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroTes;
