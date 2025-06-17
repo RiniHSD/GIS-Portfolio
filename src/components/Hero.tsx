@@ -290,14 +290,14 @@ const Hero = () => {
                   <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
                     <img 
                       className="w-full h-full object-cover"
-                      src="../assets/Foto.JPG" 
+                      src="/Foto.JPG" 
                       alt="Rini Husadiyah" 
                     />
                   </div>
                   
                   {/* Tombol Unduh CV */}
                   <a 
-                    href="../assets/CV_RiniHusadiyah.pdf"
+                    href="/CV_RiniHusadiyah.pdf"
                     download
                     className="mt-10 px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium transition-all hover:bg-white/20 border border-white/30"
                     style={{
