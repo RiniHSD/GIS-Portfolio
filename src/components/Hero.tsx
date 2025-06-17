@@ -15,7 +15,7 @@ const Hero = () => {
     '--pointer-y': '50%',
     '--rotate-x': '0deg',
     '--rotate-y': '0deg',
-    '--card-opacity': '0.3',
+    '--card-opacity': '0.2',
     '--behind-gradient': `radial-gradient(
       farthest-side circle at var(--pointer-x) var(--pointer-y),
       hsla(266, 100%, 90%, var(--card-opacity)) 4%,
@@ -26,7 +26,7 @@ const Hero = () => {
       radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
       conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%)`,
     '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)',
-    '--icon': 'url(/background1.jpg)',
+    //'--icon': 'url(/bg.jpg)',
   });
 
   // Deteksi perangkat mobile
@@ -81,7 +81,7 @@ const Hero = () => {
         '--rotate-x': `${rotateX}deg`,
         '--rotate-y': `${rotateY}deg`,
         '--card-opacity': `1`,
-        'icon' : 'url(/background.jpg)',
+        //'--icon' : 'url(/bg.jpg)',
       });
     }
   };
@@ -292,10 +292,15 @@ const Hero = () => {
               className="relative z-10 pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl aspect-square"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                background: isHovering ? 'var(--behind-gradient)' : 'rgba(255,255,255,0.04)',
+                background: isHovering
+                  ? 'url(/bg.jpg), var(--behind-gradient)'
+                  : 'var(--behind-gradient)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
               }}
             >
+
               <div className="pc-inside relative h-full w-full">
                 {/* Efek Shine */}
                 <div 
@@ -340,6 +345,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
 
       </div>
 
