@@ -5,6 +5,7 @@ import { Github, Linkedin, MapPin, Code } from 'lucide-react';
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isMobile, setIsMobile] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const fullText = 'GIS Developer & Mobile Development Specialist';
   
   // Referensi untuk kartu interaktif
@@ -24,7 +25,8 @@ const Hero = () => {
       radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
       radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
       conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%)`,
-    '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)'
+    '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)',
+    '--icon': 'url(/background1.jpg)',
   });
 
   // Deteksi perangkat mobile
@@ -55,6 +57,8 @@ const Hero = () => {
 
   // Efek pergerakan mouse untuk kartu interaktif
   const handleMouseMove = (e) => {
+    setIsHovering(true);
+
     if (cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -66,6 +70,9 @@ const Hero = () => {
       // Hitung rotasi berdasarkan posisi kursor
       const rotateX = -((pointerY - 50) / 50) * 15;
       const rotateY = ((pointerX - 50) / 50) * 15;
+
+      const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
+      const scale = 1.05 - distanceFromCenter * 0.05;
       
       setCardStyle({
         ...cardStyle,
@@ -73,17 +80,21 @@ const Hero = () => {
         '--pointer-y': `${pointerY}%`,
         '--rotate-x': `${rotateX}deg`,
         '--rotate-y': `${rotateY}deg`,
+        '--card-opacity': `1`,
+        'icon' : 'url(/background.jpg)',
       });
     }
   };
 
   const handleMouseLeave = () => {
+    setIsHovering(false);
     setCardStyle({
       ...cardStyle,
       '--pointer-x': '50%',
       '--pointer-y': '50%',
       '--rotate-x': '0deg',
       '--rotate-y': '0deg',
+      '--card-opacity': '0',
     });
   };
 
@@ -257,45 +268,63 @@ const Hero = () => {
         <div className="md:col-span-6">
           <div 
             ref={cardRef}
-            className="pc-card-wrapper w-full max-w-md mx-auto"
+            className="relative w-full max-w-md mx-auto"
             style={cardStyle}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
+            {/* Layer gradient belakang simulasi ::before */}
             <div 
-              className="pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl aspect-square"
+              className="absolute inset-0 z-0 rounded-2xl transition-all duration-500"
+              style={{
+                background: 'var(--behind-gradient)',
+                filter: isHovering 
+                  ? 'blur(40px) contrast(1) saturate(2)' 
+                  : 'blur(0px)',
+                transform: isHovering ? 'scale(1)' : 'scale(0.9)',
+                opacity: isHovering ? 1 : 0,
+                transition: 'all 0.4s ease-in-out',
+              }}
+            />
+
+            {/* Card utama */}
+            <div 
+              className="relative z-10 pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl aspect-square"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                background: 'var(--behind-gradient)',
+                background: isHovering ? 'var(--behind-gradient)' : 'rgba(255,255,255,0.04)',
+                transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
               }}
             >
               <div className="pc-inside relative h-full w-full">
+                {/* Efek Shine */}
                 <div 
-                  className="pc-shine absolute inset-0"
+                  className="absolute inset-0"
                   style={{
                     background: 'var(--inner-gradient)',
                     mask: 'linear-gradient(white, transparent 70%)',
                   }}
                 />
-                
+
+                {/* Efek Glare */}
                 <div 
-                  className="pc-glare absolute inset-0"
+                  className="absolute inset-0"
                   style={{
                     background: 'radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), #ffffff44, #00000022)',
                   }}
                 />
-                
+
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
-                  {/* Foto Profil - PATH SUDAH DIPERBAIKI */}
+                  {/* Foto */}
                   <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20 shadow-lg">
                     <img 
                       className="w-full h-full object-cover"
-                      src="/Foto.JPG" 
+                      src="/Fotobg.png" 
                       alt="Rini Husadiyah" 
                     />
                   </div>
-                  
-                  {/* Tombol Unduh CV */}
+
+                  {/* Tombol CV */}
                   <a 
                     href="/CV_RiniHusadiyah.pdf"
                     download
@@ -311,6 +340,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Scroll Indicator - Sembunyikan di mobile */}
