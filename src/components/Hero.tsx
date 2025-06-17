@@ -72,6 +72,10 @@ const Hero = () => {
 
       const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
       const scale = 1.05 - distanceFromCenter * 0.05;
+
+      const bgX = 50 + (pointerX - 50) * 0.5; // lebih agresif
+      const bgY = 50 + (pointerY - 50) * 0.1;
+
       
       setCardStyle({
         ...cardStyle,
@@ -79,6 +83,8 @@ const Hero = () => {
         '--pointer-y': `${pointerY}%`,
         '--rotate-x': `${rotateX}deg`,
         '--rotate-y': `${rotateY}deg`,
+        '--bg-x': `${bgX}%`,
+        '--bg-y': `${bgY}%`,
         '--card-opacity': `1`,
       });
     }
@@ -93,6 +99,8 @@ const Hero = () => {
       '--rotate-x': '0deg',
       '--rotate-y': '0deg',
       '--card-opacity': '0',
+      '--bg-x': '50%',
+      '--bg-y': '50%',
     });
   };
 
@@ -291,22 +299,20 @@ const Hero = () => {
             />
 
             {/* Card utama */}
-            <div 
+            <div
               className="relative z-10 pc-card rounded-[32px] overflow-hidden border border-[#cccccc50] shadow-xl w-[300px] h-[400px]"
+              style={{
+                transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
+                background: isHovering
+                  ? 'url(/bg1.jpg), var(--behind-gradient)'
+                  : 'rgba(255,255,255,0.04)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
+              }}
             >
-              {/* Lapisan dalam yang menerima efek rotasi */}
-              <div 
-                className="pc-inside relative w-full h-full"
-                style={{
-                  transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                  transition: 'transform 120ms ease-out',
-                  background: isHovering
-                    ? 'url(/bg1.jpg), var(--behind-gradient)'
-                    : 'rgba(255,255,255,0.04)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
+
+              <div className="pc-inside relative h-full w-full">
                 {/* Shine */}
                 <div 
                   className="absolute inset-0 z-0"
