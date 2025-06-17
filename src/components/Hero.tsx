@@ -64,8 +64,8 @@ const Hero = () => {
       const pointerY = (y / rect.height) * 100;
       
       // Hitung rotasi berdasarkan posisi kursor
-      const rotateX = -((pointerY - 50) / 50) * 5;
-      const rotateY = ((pointerX - 50) / 50) * 5;
+      const rotateX = -((pointerY - 50) / 50) * 15;
+      const rotateY = ((pointerX - 50) / 50) * 15;
       
       setCardStyle({
         ...cardStyle,
@@ -263,7 +263,7 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
           >
             <div 
-              className="pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl transition-all duration-500 aspect-square"
+              className="pc-card rounded-2xl overflow-hidden border border-cyan-500/20 shadow-xl aspect-square"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
                 background: 'var(--behind-gradient)',
