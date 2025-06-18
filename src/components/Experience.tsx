@@ -36,8 +36,8 @@ const Experience = () => {
     },
     {
       title: "Detailed Spatial Plan (RDTR) Development Team",
-      company: "Geospatial Research Lab",
-      location: "West Sumatera",
+      company: "Ministry of Agrarian Affairs and Spatial Planning/ National Land Agency (ATR/BPN)",
+      location: "Indonesia",
       period: "2021 - 2022",
       type: "Internship",
       description: "Gained hands-on experience in spatial data analysis and GIS software development. Contributed to research projects focused on environmental monitoring and urban planning applications.",

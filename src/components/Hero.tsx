@@ -77,8 +77,8 @@ const Hero = () => {
       const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
       const scale = 1.05 - distanceFromCenter * 0.05;
 
-      const bgX = 50 - (pointerX - 50) * 0.8; // Faktor lebih besar
-      const bgY = 50 - (pointerY - 50) * 0.8;
+      const bgX = 50 - (pointerX - 50) * 0.6; // Faktor lebih besar
+      const bgY = 50 - (pointerY - 50) * 0.6;
 
       const fgX = (pointerX - 50) * 0.3; // Faktor lebih kecil
       const fgY = (pointerY - 50) * 0.2;
@@ -296,7 +296,7 @@ const Hero = () => {
           >
             {/* Layer gradient belakang simulasi ::before */}
             <div 
-              className="absolute -inset-[20%] z-0 transition-all duration-500 pointer-events-none"
+              className="absolute -inset-[30%] z-0 transition-all duration-500 pointer-events-none"
               style={{
                 background: 'var(--behind-gradient)',
                 filter: isHovering 
