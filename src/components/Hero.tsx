@@ -30,6 +30,28 @@ const Hero = () => {
     '--bg-pos-y': '50%',
     '--fg-translate-x': '0px',
     '--fg-translate-y': '0px',
+    '--behind-gradient1': `
+      radial-gradient(
+        farthest-side circle at var(--pointer-x) var(--pointer-y),
+        hsla(180, 100%, 70%, var(--card-opacity)) 4%,
+        hsla(180, 100%, 70%, calc(var(--card-opacity)*0.75)) 10%,
+        hsla(180, 100%, 70%, calc(var(--card-opacity)*0.5)) 50%,
+        hsla(180, 100%, 70%, 0) 100%
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.1),
+        rgba(0, 255, 255, 0.1) 5px,
+        rgba(0, 100, 255, 0.1) 5px,
+        rgba(0, 100, 255, 0.1) 10px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0, 200, 255, 0.1),
+        rgba(0, 200, 255, 0.1) 7px,
+        rgba(100, 0, 255, 0.1) 7px,
+        rgba(100, 0, 255, 0.1) 14px
+      )`,
   });
 
   // Deteksi perangkat mobile
@@ -77,8 +99,8 @@ const Hero = () => {
       const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
       const scale = 1.05 - distanceFromCenter * 0.05;
 
-      const bgX = 50 - (pointerX - 50) * 0.6; // Faktor lebih besar
-      const bgY = 50 - (pointerY - 50) * 0.6;
+      const bgX = 50 - (pointerX - 50) * 0.3; // Faktor lebih besar
+      const bgY = 50 - (pointerY - 50) * 0.3;
 
       const fgX = (pointerX - 50) * 0.3; // Faktor lebih kecil
       const fgY = (pointerY - 50) * 0.2;
@@ -228,8 +250,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            Passionate about creating innovative geospatial solutions and mobile applications 
+            /// Passionate about creating innovative geospatial solutions and mobile applications 
             that bridge the gap between complex data visualization and user-friendly experiences.
+            // Jika anda membaca ini berarti website ini belum seutuhnya selesai, saya masih menyesuaikan informasi di dalamnya. source code 100% AI //
           </motion.p>
 
           {/* Social Links */}
@@ -287,8 +310,8 @@ const Hero = () => {
             ref={cardRef}
             className="relative mx-auto"
             style={{
-              width: '300px',
-              height: '400px',
+              width: '330px',
+              height: '440px',
               ...cardStyle,
             }}
             onMouseMove={handleMouseMove}
@@ -311,13 +334,21 @@ const Hero = () => {
 
             {/* Card utama */}
 
-            <div className="relative z-10 pc-card rounded-[32px] overflow-hidden border-[5px] border-[#cccccc] shadow-xl w-[300px] h-[400px] p-1 animate-pulse-glow"
+            <div className="relative z-10 pc-card rounded-[32px] overflow-hidden border-[5px] border-[#cccccc] shadow-xl w-[330px] h-[440px] p-1 animate-pulse-glow"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
                 transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
+                background: isHovering 
+                  ? 'url(/bg2.jpg)' 
+                  : '#000000', // Warna abu saat tidak hover
+                backgroundSize: 'cover',
+                backgroundPosition: isHovering 
+                  ? 'var(--bg-pos-x) var(--bg-pos-y)' 
+                  : 'center',
               }}>
+
               {/* Layer 1: Background panorama (bergerak lebih agresif) */}
-              <div 
+              {/* <div 
                 className="absolute inset-0 z-0"
                 style={{
                   backgroundImage: isHovering
@@ -328,17 +359,19 @@ const Hero = () => {
                   transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
                   transition: 'background-position 0.3s cubic-bezier(0.1, 0.7, 0.2, 1)',
                 }}
-              />
+              /> */}
               
               {/* Layer 2: Gradient belakang */}
               <div 
                 className="absolute inset-0 z-0"
                 style={{
-                  background: 'var(--behind-gradient)',
+                  background: isHovering 
+                    ? 'url(/bg.jpg), var(--behind-gradient1)' 
+                    : '#cccccc',
                   filter: isHovering 
                     ? 'blur(50px) contrast(1) saturate(2)' 
                     : 'blur(24px)',
-                  opacity: isHovering ? 1 : 0.6,
+                  opacity: isHovering ? 0.5 : 0.2,
                 }}
               />
               
@@ -365,7 +398,7 @@ const Hero = () => {
               />
               
               {/* Layer 5: Foto utama (bergerak lebih sedikit) */}
-              <div className="absolute inset-0 z-0 pointer-events-none">
+              <div className="absolute inset-0 z-10 pointer-events-none">
                     <img 
                       src="/Fotobg.png" 
                       alt="Rini Husadiyah" 
@@ -378,7 +411,7 @@ const Hero = () => {
                 <a 
                   href="/CV_RiniHusadiyah.pdf"
                   download
-                  className="relative z-10 mt-auto px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium transition-all hover:bg-white/20 border border-white/30 shadow-lg"
+                  className="relative z-10 mt-auto px-8 py-3 bg-white/20 backdrop-blur-sm rounded-full text-black font-medium transition-all hover:bg-white/20 border border-white/30 shadow-lg"
                 >
                   Download CV
                 </a>

@@ -10,9 +10,9 @@ const Experience = () => {
       location: "Sleman",
       period: "2024",
       type: "Internship",
-      description: "Leading development of innovative GIS applications and mobile solutions for spatial data management. Responsible for end-to-end project delivery including system architecture, development, and deployment.",
+      description: "Development of innovative GIS applications and mobile solutions for spatial data management. Responsible for end-to-end project delivery including system architecture, development, and deployment.",
       achievements: [
-        "Developed 5+ mobile GIS applications serving 10,000+ users",
+        "Developed mobile GIS applications serving 10,000+ users",
         "Improved data processing efficiency by 40% through optimization",
         "Led cross-functional team of 4 developers",
         "Implemented real-time location tracking systems"
