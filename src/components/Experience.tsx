@@ -6,10 +6,10 @@ const Experience = () => {
   const experiences = [
     {
       title: "GIS Developer",
-      company: "Tech Solutions",
-      location: "Indonesia",
-      period: "2023 - Present",
-      type: "Full-time",
+      company: "PT Techno GIS Indonesia",
+      location: "Sleman",
+      period: "2024",
+      type: "Internship",
       description: "Leading development of innovative GIS applications and mobile solutions for spatial data management. Responsible for end-to-end project delivery including system architecture, development, and deployment.",
       achievements: [
         "Developed 5+ mobile GIS applications serving 10,000+ users",
@@ -17,12 +17,12 @@ const Experience = () => {
         "Led cross-functional team of 4 developers",
         "Implemented real-time location tracking systems"
       ],
-      technologies: ["React Native", "ArcGIS", "Python", "PostgreSQL", "Node.js"]
+      technologies: ["React Native", "ArcGIS", "Postman", "PostgreSQL", "Node.js"]
     },
     {
-      title: "Mobile Developer",
-      company: "Digital Innovations",
-      location: "Indonesia",
+      title: "Lecturar Assistant",
+      company: "Universitas Gadjah Mada",
+      location: "Yogyakarta",
       period: "2022 - 2023",
       type: "Contract",
       description: "Specialized in developing location-based mobile applications with focus on user experience and performance optimization. Collaborated with design teams to create intuitive interfaces for complex geospatial data.",
@@ -35,9 +35,9 @@ const Experience = () => {
       technologies: ["React Native", "JavaScript", "Google Maps API", "Firebase"]
     },
     {
-      title: "GIS Intern",
+      title: "Detailed Spatial Plan (RDTR) Development Team",
       company: "Geospatial Research Lab",
-      location: "Indonesia",
+      location: "West Sumatera",
       period: "2021 - 2022",
       type: "Internship",
       description: "Gained hands-on experience in spatial data analysis and GIS software development. Contributed to research projects focused on environmental monitoring and urban planning applications.",

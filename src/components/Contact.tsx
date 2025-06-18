@@ -25,27 +25,27 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      value: "rini@example.com",
-      href: "mailto:rini@example.com",
-      color: "cyber-cyan"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      value: "Indonesia",
-      href: "#",
-      color: "cyber-purple"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+62 XXX XXX XXXX",
-      href: "tel:+62XXXXXXXXX",
-      color: "cyber-green"
-    }
+    // {
+    //   icon: Mail,
+    //   title: "Email",
+    //   value: "rini@example.com",
+    //   href: "mailto:rini@example.com",
+    //   color: "cyber-cyan"
+    // },
+    // {
+    //   icon: MapPin,
+    //   title: "Location",
+    //   value: "Indonesia",
+    //   href: "#",
+    //   color: "cyber-purple"
+    // },
+    // {
+    //   icon: Phone,
+    //   title: "Phone",
+    //   value: "+62 XXX XXX XXXX",
+    //   href: "tel:+62XXXXXXXXX",
+    //   color: "cyber-green"
+    // }
   ];
 
   const socialLinks = [
@@ -61,12 +61,12 @@ const Contact = () => {
       href: "https://www.linkedin.com/in/rinihusadiyah/",
       color: "hover:text-blue-400"
     },
-    {
-      icon: MessageCircle,
-      name: "WhatsApp",
-      href: "#",
-      color: "hover:text-green-400"
-    }
+    // {
+    //   icon: MessageCircle,
+    //   name: "WhatsApp",
+    //   href: "#",
+    //   color: "hover:text-green-400"
+    // }
   ];
 
   const getColorClasses = (color: string) => {

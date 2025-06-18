@@ -51,7 +51,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 pl-4 md:pl-6"
           >
             <h3 className="text-2xl font-bold text-cyber-cyan mb-4">
               Bridging Geography and Technology

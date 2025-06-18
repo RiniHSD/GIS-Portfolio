@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Camera, Mountain, Music, BookOpen, Gamepad2, Coffee, Palette, Compass } from 'lucide-react';
 
+
+// tambahin playlist spotify
 const Interests = () => {
   const interests = [
     {

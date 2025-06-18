@@ -200,7 +200,7 @@ const Skills = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-3">
-              {['Machine Learning', 'Cloud Computing', 'DevOps', 'AI/ML in GIS', 'Blockchain', 'IoT'].map((skill, index) => (
+              {['Machine Learning', 'Cloud Computing', 'DevOps', 'AI/ML in GIS', 'Big Data', 'IoT'].map((skill, index) => (
                 <motion.span
                   key={skill}
                   className="px-4 py-2 bg-cyber-black/50 border border-cyber-green/30 rounded-full text-cyber-green text-sm"
@@ -220,5 +220,7 @@ const Skills = () => {
     </section>
   );
 };
+
+// bikin stack aja
 
 export default Skills;

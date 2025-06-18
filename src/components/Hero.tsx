@@ -6,7 +6,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isMobile, setIsMobile] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const fullText = 'GIS Developer & Mobile Development Specialist';
+  const fullText = 'GIS Analyst | GIS Developer | Surveyor';
   
   // Referensi untuk kartu interaktif
   const cardRef = useRef(null);
@@ -26,6 +26,10 @@ const Hero = () => {
       radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
       conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%)`,
     '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)',
+    '--bg-pos-x': '50%',
+    '--bg-pos-y': '50%',
+    '--fg-translate-x': '0px',
+    '--fg-translate-y': '0px',
   });
 
   // Deteksi perangkat mobile
@@ -73,8 +77,11 @@ const Hero = () => {
       const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
       const scale = 1.05 - distanceFromCenter * 0.05;
 
-      const bgX = 50 + (pointerX - 50) * 0.5; // lebih agresif
-      const bgY = 50 + (pointerY - 50) * 0.1;
+      const bgX = 50 + (pointerX - 50) * 1.5; // Faktor lebih besar
+      const bgY = 50 + (pointerY - 50) * 1.5;
+
+      const fgX = (pointerX - 50) * 0.3; // Faktor lebih kecil
+      const fgY = (pointerY - 50) * 0.2;
 
       
       setCardStyle({
@@ -83,8 +90,10 @@ const Hero = () => {
         '--pointer-y': `${pointerY}%`,
         '--rotate-x': `${rotateX}deg`,
         '--rotate-y': `${rotateY}deg`,
-        '--bg-x': `${bgX}%`,
-        '--bg-y': `${bgY}%`,
+        '--bg-pos-x': `${bgX}%`,
+        '--bg-pos-y': `${bgY}%`,
+        '--fg-translate-x': `${fgX}px`,
+        '--fg-translate-y': `${fgY}px`,
         '--card-opacity': `1`,
       });
     }
@@ -98,9 +107,11 @@ const Hero = () => {
       '--pointer-y': '50%',
       '--rotate-x': '0deg',
       '--rotate-y': '0deg',
+      '--bg-pos-x': '50%',
+      '--bg-pos-y': '50%',
+      '--fg-translate-x': '0px',
+      '--fg-translate-y': '0px',
       '--card-opacity': '0',
-      '--bg-x': '50%',
-      '--bg-y': '50%',
     });
   };
 
@@ -167,11 +178,11 @@ const Hero = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-neon-gradient p-1 animate-pulse-glow">
+            {/* <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full bg-neon-gradient p-1 animate-pulse-glow">
               <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center">
                 <Code size={32} className="md:size-10 text-cyber-cyan" />
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Name */}
@@ -299,63 +310,80 @@ const Hero = () => {
             />
 
             {/* Card utama */}
-            <div
-              className="relative z-10 pc-card rounded-[32px] overflow-hidden border border-[#cccccc50] shadow-xl w-[300px] h-[400px]"
+
+            <div className="relative z-10 pc-card rounded-[32px] overflow-hidden border-[5px] border-[#cccccc] shadow-xl w-[300px] h-[400px] p-1 animate-pulse-glow"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                background: isHovering
-                  ? 'url(/bg1.jpg), var(--behind-gradient)'
-                  : 'rgba(255,255,255,0.04)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
-              }}
-            >
-
-              <div className="pc-inside relative h-full w-full">
-                {/* Shine */}
-                <div 
-                  className="absolute inset-0 z-0"
-                  style={{
-                    background: 'var(--inner-gradient)',
-                    mask: 'linear-gradient(white, transparent 70%)',
-                  }}
-                />
-
-                {/* Glare */}
-                <div 
-                  className="absolute inset-0 mix-blend-soft-light pointer-events-none z-0"
-                  style={{
-                    background: 'radial-gradient(circle at var(--pointer-x) var(--pointer-y), #ffffff55 10%, transparent 60%)',
-                    opacity: isHovering ? 0.5 : 0,
-                    transition: 'opacity 0.4s ease',
-                  }}
-                />
-
-                {/* Konten Utama */}
-                <div className="relative z-10 w-full h-full flex flex-col items-center justify-end p-6 pb-8">
-
-                  {/* Foto — full container */}
-                  <div className="absolute inset-0 z-0 pointer-events-none">
+              }}>
+              {/* Layer 1: Background panorama (bergerak lebih agresif) */}
+              <div 
+                className="absolute inset-0 z-0"
+                style={{
+                  backgroundImage: isHovering
+                  ? 'url(/bg1.jpg), var(--behind-gradient)'
+                  : 'rgba(90,90,90,1)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'var(--bg-pos-x) var(--bg-pos-y)',
+                  transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
+                  transition: 'background-position 0.3s cubic-bezier(0.1, 0.7, 0.2, 1)',
+                }}
+              />
+              
+              {/* Layer 2: Gradient belakang */}
+              <div 
+                className="absolute inset-0 z-0"
+                style={{
+                  background: 'var(--behind-gradient)',
+                  filter: isHovering 
+                    ? 'blur(50px) contrast(1) saturate(2)' 
+                    : 'blur(24px)',
+                  opacity: isHovering ? 1 : 0.6,
+                }}
+              />
+              
+              {/* Layer 3: Inner gradient */}
+              <div 
+                className="absolute inset-0 z-0"
+                style={{
+                  background: 'var(--inner-gradient)',
+                  filter: isHovering 
+                    ? 'blur(50px) contrast(1) saturate(2)' 
+                    : 'blur(24px)',
+                  opacity: isHovering ? 0 : 1,
+                }}
+              />
+              
+              {/* Layer 4: Glare effect */}
+              <div 
+                className="absolute inset-0 mix-blend-soft-light pointer-events-none z-0"
+                style={{
+                  background: 'radial-gradient(circle at var(--pointer-x) var(--pointer-y), #ffffff55 10%, transparent 60%)',
+                  opacity: isHovering ? 0.5 : 0,
+                  transition: 'opacity 0.4s ease'
+                }}
+              />
+              
+              {/* Layer 5: Foto utama (bergerak lebih sedikit) */}
+              <div className="absolute inset-0 z-0 pointer-events-none">
                     <img 
                       src="/Fotobg.png" 
                       alt="Rini Husadiyah" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-
-                  {/* Tombol CV */}
-                  <a 
-                    href="/CV_RiniHusadiyah.pdf"
-                    download
-                    className="relative z-10 mt-auto px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium transition-all hover:bg-white/20 border border-white/30 shadow-lg"
-                  >
-                    Download CV
-                  </a>
-                </div>
+              
+              {/* Tombol CV */}
+              <div className="relative z-10 w-full h-full flex flex-col items-center justify-end p-6 pb-8">
+                <a 
+                  href="/CV_RiniHusadiyah.pdf"
+                  download
+                  className="relative z-10 mt-auto px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium transition-all hover:bg-white/20 border border-white/30 shadow-lg"
+                >
+                  Download CV
+                </a>
               </div>
             </div>
-
 
           </div>
         </div>

@@ -5,7 +5,7 @@ import { ExternalLink, Github, MapPin, Smartphone, Globe } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Smart City Navigation App",
+      title: "GIS Developer",
       description: "A comprehensive mobile application for urban navigation with real-time traffic data, public transport integration, and accessibility features.",
       image: "https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
@@ -16,7 +16,7 @@ const Projects = () => {
       icon: Smartphone
     },
     {
-      title: "Environmental Monitoring Dashboard",
+      title: "GIS Analyst",
       description: "Interactive web platform for monitoring environmental data with real-time sensor integration and predictive analytics.",
       image: "https://images.pexels.com/photos/2058993/pexels-photo-2058993.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
@@ -27,7 +27,7 @@ const Projects = () => {
       icon: Globe
     },
     {
-      title: "Location-Based Service Platform",
+      title: "Surveyor",
       description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
       image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
