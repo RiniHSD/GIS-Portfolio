@@ -6,7 +6,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isMobile, setIsMobile] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const fullText = 'GIS Analyst | GIS Developer | Surveyor';
+  const fullText = 'GIS Analyst | GIS Engineer | Surveyor';
   
   // Referensi untuk kartu interaktif
   const cardRef = useRef(null);
@@ -71,14 +71,14 @@ const Hero = () => {
       const pointerY = (y / rect.height) * 100;
       
       // Hitung rotasi berdasarkan posisi kursor
-      const rotateX = -((pointerY - 50) / 50) * 15;
-      const rotateY = ((pointerX - 50) / 50) * 15;
+      const rotateX = ((pointerY - 50) / 50) * 15;
+      const rotateY = -((pointerX - 50) / 50) * 15;
 
       const distanceFromCenter = Math.sqrt(Math.pow(pointerX - 50, 2) + Math.pow(pointerY - 50, 2)) / 50;
       const scale = 1.05 - distanceFromCenter * 0.05;
 
-      const bgX = 50 + (pointerX - 50) * 1.5; // Faktor lebih besar
-      const bgY = 50 + (pointerY - 50) * 1.5;
+      const bgX = 50 - (pointerX - 50) * 0.8; // Faktor lebih besar
+      const bgY = 50 - (pointerY - 50) * 0.8;
 
       const fgX = (pointerX - 50) * 0.3; // Faktor lebih kecil
       const fgY = (pointerY - 50) * 0.2;
