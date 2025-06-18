@@ -319,7 +319,7 @@ const Hero = () => {
           >
             {/* Layer gradient belakang simulasi ::before */}
             <div 
-              className="absolute -inset-[30%] z-0 transition-all duration-500 pointer-events-none"
+              className="absolute -inset-[25%] z-0 transition-all duration-500 pointer-events-none"
               style={{
                 background: 'var(--behind-gradient)',
                 filter: isHovering 
@@ -337,9 +337,9 @@ const Hero = () => {
             <div className="relative z-10 pc-card rounded-[32px] overflow-hidden border-[5px] border-[#cccccc] shadow-xl w-[330px] h-[440px] p-1 animate-pulse-glow"
               style={{
                 transform: 'perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y))',
-                transition: 'transform 120ms ease-out, background 0.4s ease-in-out',
+                transition: 'transform 50ms ease-out',
                 background: isHovering 
-                  ? 'url(/bg2.jpg)' 
+                  ? 'url(/bg3.jpg)' 
                   : '#000000', // Warna abu saat tidak hover
                 backgroundSize: 'cover',
                 backgroundPosition: isHovering 
