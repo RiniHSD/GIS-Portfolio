@@ -205,6 +205,71 @@ const Interests = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* Spotify Playlists Section */}
+        <div className="mt-24 mb-16 px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-neon-gradient bg-clip-text text-transparent">
+              Coding Soundtracks
+            </h2>
+            <div className="w-24 h-1 bg-cyber-cyan mx-auto rounded-full" />
+            <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
+              Playlists that fuel my creativity and focus during development sessions
+            </p>
+          </motion.div>
+
+          <div className="grid max-[360px]:justify-items-center gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-7xl mx-auto">
+            <div className="col-span-2 xl:col-span-3 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
+              <iframe 
+                src="https://open.spotify.com/embed/playlist/4owsB0rW55ReJqnCsjOzXT?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+                style={{ border: 'none' }}>
+              </iframe>
+            </div>
+
+            <div className="col-span-2 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
+              <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/2VI9qnSZo4ABfGDxb2uZIc?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+                style={{ border: 'none' }}>
+              </iframe>
+            </div>
+
+            <div className="col-span-2 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
+              <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/7vUylkUvrdaCcKWfjeFfDp?utm_source=generator&theme=0" 
+                width="100%" 
+                height="352" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+                style={{ border: 'none' }}>
+                </iframe>
+            </div>
+
+            <div className="col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-3 2xl:col-span-3 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
+              <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/61JXz3pdsB8RLhLADJL9IZ?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+                style={{ border: 'none' }}>
+              </iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

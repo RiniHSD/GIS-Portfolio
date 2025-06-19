@@ -22,8 +22,8 @@ const Hero = () => {
       hsla(266, 50%, 80%, calc(var(--card-opacity)*0.75)) 10%,
       hsla(266, 25%, 70%, calc(var(--card-opacity)*0.5)) 50%,
       hsla(266, 0%, 60%, 0) 100%),
-      radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-      radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
+      radial-gradient(35% 52% at 55% 20%, #00ffaac4 50%, #073aff00 100%),
+      radial-gradient(100% 100% at 50% 50%, #ffaac4 1%, #073aff00 76%),
       conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%)`,
     '--inner-gradient': 'linear-gradient(145deg, #60496e8c 0%, #71C4FF44 100%)',
     '--bg-pos-x': '50%',
@@ -392,7 +392,7 @@ const Hero = () => {
                 className="absolute inset-0 mix-blend-soft-light pointer-events-none z-0"
                 style={{
                   background: 'radial-gradient(circle at var(--pointer-x) var(--pointer-y), #ffffff55 10%, transparent 60%)',
-                  opacity: isHovering ? 0.5 : 0,
+                  opacity: isHovering ? 1 : 1,
                   transition: 'opacity 0.4s ease'
                 }}
               />

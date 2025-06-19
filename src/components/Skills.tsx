@@ -1,89 +1,61 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Smartphone, Map, Globe, Settings } from 'lucide-react';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: Code,
-      color: "cyber-cyan",
-      skills: [
-        { name: "React/React Native", level: 95 },
-        { name: "JavaScript/TypeScript", level: 90 },
-        { name: "HTML/CSS", level: 88 },
-        { name: "Tailwind CSS", level: 85 }
-      ]
-    },
-    {
-      title: "GIS Technologies",
-      icon: Map,
-      color: "cyber-purple",
-      skills: [
-        { name: "ArcGIS", level: 92 },
-        { name: "QGIS", level: 88 },
-        { name: "Leaflet", level: 85 },
-        { name: "Google Maps API", level: 90 }
-      ]
-    },
-    {
-      title: "Backend & Database",
-      icon: Database,
-      color: "cyber-pink",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "PostgreSQL/PostGIS", level: 88 },
-        { name: "MongoDB", level: 75 }
-      ]
-    },
-    {
-      title: "Mobile Development",
-      icon: Smartphone,
-      color: "cyber-green",
-      skills: [
-        { name: "React Native", level: 90 },
-        { name: "iOS Development", level: 75 },
-        { name: "Android Development", level: 80 },
-        { name: "Cross-platform", level: 88 }
-      ]
-    },
-    {
-      title: "Web Technologies",
-      icon: Globe,
-      color: "cyber-cyan",
-      skills: [
-        { name: "RESTful APIs", level: 88 },
-        { name: "GraphQL", level: 70 },
-        { name: "WebGIS", level: 92 },
-        { name: "Progressive Web Apps", level: 85 }
-      ]
-    },
-    {
-      title: "Tools & DevOps",
-      icon: Settings,
-      color: "cyber-purple",
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS/Cloud Services", level: 70 },
-        { name: "CI/CD", level: 72 }
-      ]
-    }
+  // Daftar gambar skills (pastikan file gambar ada di public/skills)
+  const techSkills = [
+    { name: 'React', image: '/skills/react.png' },
+    { name: 'TypeScript', image: '/skills/typescript.png' },
+    { name: 'JavaScript', image: '/skills/javascript.png' },
+    { name: 'Node.js', image: '/skills/nodejs.png' },
+    { name: 'Python', image: '/skills/python.png' },
+    { name: 'PostgreSQL', image: '/skills/postgresql.png' },
+    // { name: 'MongoDB', image: '/skills/mongodb.png' },
+    { name: 'ArcGIS', image: '/skills/arcgis.png' },
+    { name: 'QGIS', image: '/skills/qgis.png' },
+    { name: 'Leaflet', image: '/skills/leaflet.png' },
+    { name: 'Google Maps', image: '/skills/gee.png' },
+    // { name: 'Docker', image: '/skills/docker.png' },
+    // { name: 'AWS', image: '/skills/aws.png' },
+    { name: 'Git', image: '/skills/git.png' },
+    { name: 'HTML5', image: '/skills/html5.png' },
+    { name: 'CSS3', image: '/skills/css3.png' },
+    // { name: 'Tailwind CSS', image: '/skills/tailwindcss.png' },
+    // { name: 'React Native', image: '/skills/react-native.png' },
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      'cyber-cyan': 'text-cyber-cyan border-cyber-cyan bg-cyber-cyan',
-      'cyber-purple': 'text-cyber-purple border-cyber-purple bg-cyber-purple',
-      'cyber-pink': 'text-cyber-pink border-cyber-pink bg-cyber-pink',
-      'cyber-green': 'text-cyber-green border-cyber-green bg-cyber-green'
-    };
-    return colorMap[color as keyof typeof colorMap] || colorMap['cyber-cyan'];
+  // Duplikasi array untuk efek infinite scroll
+  const duplicatedSkills = [...techSkills, ...techSkills];
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Fungsi untuk menggerakkan carousel
+  const moveCarousel = () => {
+    if (!isPaused && carouselRef.current) {
+      setPosition(prev => {
+        const newPosition = prev - 1;
+        const containerWidth = carouselRef.current?.scrollWidth || 0;
+        const itemWidth = 120; // Lebar setiap item
+        const threshold = containerWidth / 2 - itemWidth;
+        
+        if (Math.abs(newPosition) > threshold) {
+          return 0;
+        }
+        return newPosition;
+      });
+    }
   };
 
+  // Gunakan useEffect untuk animasi berkelanjutan
+  React.useEffect(() => {
+    const interval = setInterval(moveCarousel, 30);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-black to-cyber-dark" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -99,86 +71,48 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-cyber-cyan mx-auto rounded-full" />
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            A comprehensive toolkit spanning GIS technologies, mobile development, and modern web frameworks
+            Technologies and tools I work with
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.15 }}
-              viewport={{ once: true }}
-              className="bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl p-6 hover:border-cyber-cyan/60 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: '0 10px 30px rgba(0, 255, 255, 0.1)'
-              }}
-            >
-              {/* Category Header */}
-              <div className="flex items-center mb-6">
-                <motion.div
-                  className={`w-12 h-12 rounded-lg border ${getColorClasses(category.color).split(' ')[1]} ${getColorClasses(category.color).split(' ')[2]}/20 flex items-center justify-center mr-4`}
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <category.icon size={24} className={getColorClasses(category.color).split(' ')[0]} />
-                </motion.div>
-                <h3 className="text-lg font-bold text-white">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: (categoryIndex * 0.15) + (skillIndex * 0.1) }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 text-sm font-medium">
-                        {skill.name}
-                      </span>
-                      <span className={`text-xs font-bold ${getColorClasses(category.color).split(' ')[0]}`}>
-                        {skill.level}%
-                      </span>
-                    </div>
-                    
-                    <div className="w-full bg-cyber-black/50 rounded-full h-2 overflow-hidden">
-                      <motion.div
-                        className={`h-full ${getColorClasses(category.color).split(' ')[2]} rounded-full relative`}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: (categoryIndex * 0.15) + (skillIndex * 0.1) + 0.3 }}
-                        viewport={{ once: true }}
-                      >
-                        <motion.div
-                          className={`absolute inset-0 ${getColorClasses(category.color).split(' ')[2]} opacity-50`}
-                          animate={{ 
-                            x: ['-100%', '100%'],
-                          }}
-                          transition={{ 
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                          style={{
-                            background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)`
-                          }}
-                        />
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        {/* Skills Carousel */}
+        <div 
+          className="relative overflow-hidden py-10"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <motion.div 
+            ref={carouselRef}
+            className="flex"
+            animate={{ x: position }}
+            drag="x"
+            dragConstraints={{ left: -2000, right: 0 }}
+            dragElastic={0.1}
+            onDragStart={() => setIsDragging(true)}
+            onDragEnd={() => setIsDragging(false)}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          >
+            {duplicatedSkills.map((skill, index) => (
+              <motion.div
+                key={`${skill.name}-${index}`}
+                className="flex-shrink-0 mx-4 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center bg-cyber-dark/100 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl p-4 hover:border-cyber-cyan/60 hover:shadow-neon transition-all duration-300"
+                whileHover={{ 
+                  scale: 1.1,
+                  boxShadow: "0 0 20px rgba(0, 255, 255, 0.5)"
+                }}
+              >
+                <img 
+                  src={skill.image} 
+                  alt={skill.name} 
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          {/* Gradient overlay untuk efek fading */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-cyber-black to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-cyber-black to-transparent pointer-events-none" />
         </div>
 
         {/* Additional Skills Summary */}
@@ -220,7 +154,5 @@ const Skills = () => {
     </section>
   );
 };
-
-// bikin stack aja
 
 export default Skills;
