@@ -9,7 +9,7 @@ const Education = () => {
       institution: "Universitas Gadjah Mada",
       location: "Indonesia",
       period: "2021 - 2025",
-      description: "Specialized in spatial data analysis, cartography, aerial & terestrial mapping, and GIS software development.",
+      description: "Focused on applying geospatial technologies in spatial analysis, cartographic design, drone & GNSS-based surveying, and GIS software development",
       highlights: ["Spatial Data Analysis", "Cartographic Design", "GIS Programming", "Remote Sensing"]
     },
     // {

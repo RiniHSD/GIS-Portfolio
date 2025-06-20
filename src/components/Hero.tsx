@@ -250,9 +250,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            /// Passionate about creating innovative geospatial solutions and mobile applications 
+            Passionate about creating innovative geospatial solutions and mobile applications 
             that bridge the gap between complex data visualization and user-friendly experiences.
-            // Jika anda membaca ini berarti website ini belum seutuhnya selesai, saya masih menyesuaikan informasi di dalamnya. source code 100% AI //
           </motion.p>
 
           {/* Social Links */}

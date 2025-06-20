@@ -7,22 +7,22 @@ const About = () => {
     {
       icon: MapPin,
       title: "GIS Expertise",
-      description: "Specialized in Geographic Information Systems with focus on spatial data analysis and visualization"
+      description: "Skilled in spatial data processing, mapping, and visualization using ArcGIS, QGIS, and Google Earth Engine — with experience in both desktop and field workflows"
     },
     {
       icon: Smartphone,
-      title: "Mobile Development",
-      description: "Creating intuitive mobile applications that bring geospatial data to users' fingertips"
+      title: "Mobile GIS Development",
+      description: "Developing mobile GIS apps for field mapping using React Native, Ionic, Leaflet, and GNSS tools — applied in academic and internship projects"
     },
     {
       icon: Code2,
-      title: "Full-Stack Development",
-      description: "End-to-end development experience from backend systems to user interfaces"
+      title: "Web Development",
+      description: "Hands-on experience building full-stack GIS apps with JavaScript, Python, HTML, PHP, and PostgreSQL/PostGIS — from frontend to spatial data backend"
     },
     {
       icon: Database,
-      title: "Data Management",
-      description: "Expert in handling complex geospatial databases and optimizing data workflows"
+      title: "Spatial Data Management",
+      description: "Proficient in managing geospatial databases with PostGIS and MySQL, optimizing workflows for spatial analysis and map generation"
     }
   ];
 
@@ -58,17 +58,17 @@ const About = () => {
             </h3>
             
             <p className="text-gray-300 leading-relaxed">
-              As a passionate GIS Developer with expertise in mobile development, I specialize in 
-              creating innovative solutions that transform complex geospatial data into accessible, 
-              user-friendly applications. My work focuses on developing cutting-edge mobile and web 
-              applications that help organizations make informed decisions through spatial analysis.
+              As a final-year GIS student with a passion for geospatial development, I focus on 
+              building mobile and web-based mapping applications that make spatial data more 
+              accessible and useful. My academic and internship experiences include working 
+              with GNSS-based field data collection, spatial data processing, 
+              and developing GIS tools using JavaScript and open-source technologies.
             </p>
 
             <p className="text-gray-300 leading-relaxed">
-              With a strong foundation in Geographic Information Systems and modern development 
-              technologies, I bring a unique perspective to projects that require both technical 
-              precision and creative problem-solving. I'm committed to delivering solutions that 
-              not only meet technical requirements but also provide exceptional user experiences.
+              I'm especially interested in the intersection of spatial analysis and programming, 
+              and I enjoy turning complex geospatial concepts into practical digital solutions 
+              through hands-on coding and fieldwork.
             </p>
 
             <motion.div
@@ -79,7 +79,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <div className="flex flex-wrap gap-3">
-                {['React', 'GIS', 'Mobile Development', 'JavaScript', 'Python', 'ArcGIS'].map((skill, index) => (
+                {['GIS', 'Mobile GIS', 'JavaScript', 'Python', 'ArcGIS', 'QGIS', 'GEE'].map((skill, index) => (
                   <motion.span
                     key={skill}
                     className="px-4 py-2 bg-cyber-dark/50 border border-cyber-cyan/30 rounded-full text-sm text-cyber-cyan"

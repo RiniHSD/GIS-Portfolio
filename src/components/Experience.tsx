@@ -10,44 +10,57 @@ const Experience = () => {
       location: "Sleman",
       period: "2024",
       type: "Internship",
-      description: "Development of innovative GIS applications and mobile solutions for spatial data management. Responsible for end-to-end project delivery including system architecture, development, and deployment.",
+      description: "Assisted in the development of a mobile GIS application for village boundary mapping, integrating GNSS-based data collection and spatial database management",
       achievements: [
-        "Developed mobile GIS applications serving 10,000+ users",
-        "Improved data processing efficiency by 40% through optimization",
-        "Led cross-functional team of 4 developers",
-        "Implemented real-time location tracking systems"
+        "Developed and registered a mobile GIS application under Indonesia's Intellectual Property Rights (HKI)",
+        "Integrated GNSS geodetic data to improve spatial accuracy for administrative boundary mapping",
+        "Designed and managed spatial databases using PostgreSQL and PostGIS",
+        "Improved data collection workflows using mobile-first mapping solutions"
       ],
-      technologies: ["React Native", "ArcGIS", "Postman", "PostgreSQL", "Node.js"]
+      technologies: ["JavaScript", "React Native", "Leaflet", "GNSS", "PostgreSQL"],
+      link: "https://e-hakcipta.dgip.go.id/legal/c/ZTgxMTdhM2U4Yjg3MDk4OWI4NDdmNTdlYzZkOGFlZjIK"
     },
     {
       title: "Lecturar Assistant",
       company: "Universitas Gadjah Mada",
       location: "Yogyakarta",
-      period: "2022 - 2023",
-      type: "Contract",
-      description: "Specialized in developing location-based mobile applications with focus on user experience and performance optimization. Collaborated with design teams to create intuitive interfaces for complex geospatial data.",
+      period: "2024",
+      type: "Academic",
+      description: "Assisted undergraduate students in two programming-related courses as a teaching assistant. Helped facilitate learning through code reviews, debugging, and hands-on guidance during lab sessions",
       achievements: [
-        "Built award-winning navigation app with 50,000+ downloads",
-        "Reduced app loading time by 60% through code optimization",
-        "Integrated multiple mapping APIs and services",
-        "Mentored junior developers in mobile best practices"
+        "Facilitated practical sessions for 62 GIS students in Computer Programming (VB.Net, C#, Python, Java, HTML/CSS, JavaScript, PHP)",
+        "Guided 61 students in developing mobile applications using React Native and Ionic for Advanced Mobile Geospatial Programming",
+        "Supported students' understanding of core programming concepts through collaborative exercises and live coding demonstrations",
       ],
-      technologies: ["React Native", "JavaScript", "Google Maps API", "Firebase"]
+      technologies: ["Python", "React Native", "Ionic", "VB.Net", "C#", "Java", "HTML/CSS", "JavaScript", "PHP"]
     },
     {
-      title: "Detailed Spatial Plan (RDTR) Development Team",
+      title: "Spatial Planning (RDTR Development Team)",
       company: "Ministry of Agrarian Affairs and Spatial Planning/ National Land Agency (ATR/BPN)",
-      location: "Indonesia",
-      period: "2021 - 2022",
+      location: "West Sumatera",
+      period: "Feb - Jun 2024",
       type: "Internship",
-      description: "Gained hands-on experience in spatial data analysis and GIS software development. Contributed to research projects focused on environmental monitoring and urban planning applications.",
+      description: "Part of the official RDTR development team for IKK Lubuk Tarok, contributing to spatial map revisions, document drafting, and spatial plan design using ArcGIS",
       achievements: [
-        "Analyzed satellite imagery for environmental monitoring",
-        "Created interactive web maps for research visualization",
-        "Automated data processing workflows",
-        "Presented findings at regional GIS conference"
+        "Revised base maps and thematic maps for spatial planning purposes",
+        "Assisted in preparing fact books and analysis documents for the 2024 - 2044 RDTR of IKK Lubuk Tarok",
+        "Drafted sections of the spatial structure plan under supervision of senior planners",
+        "Visualized and analyzed spatial zoning using ArcGIS Desktop and QGIS"
       ],
-      technologies: ["ArcGIS", "QGIS", "Python", "JavaScript", "HTML/CSS"]
+      technologies: ["ArcGIS", "QGIS", "Spatial Planning", "Cartography"]
+    },
+    {
+      title: "Geography Olympiad Trainer & Mentor",
+      company: "MAN Insan Cendekia Siak",
+      location: "Siak, Riau",
+      period: "Feb 2024, Jul 2024",
+      type: "Freelance",
+      description: "Provided short-term mentorship to high school students in preparation for the national-level Madrasah Science Competition (KSM) in Geography",
+      achievements: [
+        "Delivered intensive training sessions on geographic concepts, data interpretation, and spatial reasoning",
+        "Successfully mentored a student who won a Silver Medal at the 2024 KSM National Competition in Ternate, North Maluku",
+      ],
+      technologies: ["Geographic Education", "Training", "Python", "Remote Mentoring"]
     }
   ];
 
@@ -133,6 +146,20 @@ const Experience = () => {
                   <p className="text-gray-300 leading-relaxed mb-6">
                     {exp.description}
                   </p>
+
+                  {exp.link && exp.title === "GIS Developer" && (
+                    <p className="text-sm text-cyber-cyan underline mb-6">
+                      🏆{" "}
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-cyber-purple transition-colors"
+                      >
+                        Officially registered under Indonesia's HKI system
+                      </a>
+                    </p>
+                  )}
 
                   {/* Achievements */}
                   <div className="mb-6">

@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, MapPin, Smartphone, Globe } from 'lucide-react';
+import { ExternalLink, Github, MapPin, Smartphone, Globe, Drone } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "GIS Developer",
+      title: "Map Projects",
       description: "A comprehensive mobile application for urban navigation with real-time traffic data, public transport integration, and accessibility features.",
       image: "https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
@@ -13,21 +13,21 @@ const Projects = () => {
       demoUrl: "https://drive.google.com/file/d/1Muu2iEImjb70QqBep6yhWSpUox1QPXmR/view",
       githubUrl: "https://github.com/RiniHSD",
       category: "Mobile App",
-      icon: Smartphone
+      icon: MapPin
     },
     {
-      title: "GIS Analyst",
+      title: "Field Survey",
       description: "Interactive web platform for monitoring environmental data with real-time sensor integration and predictive analytics.",
       image: "https://images.pexels.com/photos/2058993/pexels-photo-2058993.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
       features: ["Real-time Data", "Predictive Analytics", "Interactive Maps", "Report Generation"],
       demoUrl: "https://storymaps.arcgis.com/stories/cda2b0bdd6f64cf49f93ba6b8c76d56f",
       githubUrl: "https://github.com/RiniHSD",
-      category: "Web Application",
-      icon: Globe
+      category: "Field Survey",
+      icon: MapPin
     },
     {
-      title: "Surveyor",
+      title: "App Development",
       description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
       image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
