@@ -24,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL!, {
+      const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
         method: "POST",
         headers: {
           Accept: "application/json",
