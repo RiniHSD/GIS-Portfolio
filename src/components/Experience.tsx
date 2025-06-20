@@ -8,7 +8,7 @@ const Experience = () => {
       title: "GIS Developer",
       company: "PT Techno GIS Indonesia",
       location: "Sleman",
-      period: "2024",
+      period: "Sep - Dec 2024",
       type: "Internship",
       description: "Assisted in the development of a mobile GIS application for village boundary mapping, integrating GNSS-based data collection and spatial database management",
       achievements: [
@@ -24,7 +24,7 @@ const Experience = () => {
       title: "Lecturar Assistant",
       company: "Universitas Gadjah Mada",
       location: "Yogyakarta",
-      period: "2024",
+      period: "Aug - Dec 2024",
       type: "Academic",
       description: "Assisted undergraduate students in two programming-related courses as a teaching assistant. Helped facilitate learning through code reviews, debugging, and hands-on guidance during lab sessions",
       achievements: [

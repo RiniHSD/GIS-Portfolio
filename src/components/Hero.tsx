@@ -252,6 +252,7 @@ const Hero = () => {
           >
             Passionate about creating innovative geospatial solutions and mobile applications 
             that bridge the gap between complex data visualization and user-friendly experiences.
+            // Website ini belum seutuhnya selesai, bagian project belum ditambahkan
           </motion.p>
 
           {/* Social Links */}

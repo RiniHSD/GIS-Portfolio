@@ -9,51 +9,51 @@ const Interests = () => {
     {
       icon: Camera,
       title: "Photography",
-      description: "Capturing landscapes and urban architecture, especially from aerial perspectives using drones.",
+      description: "Capturing landscapes and urban scenes — especially aerial imagery via drones",
       color: "cyber-cyan"
     },
     {
       icon: Mountain,
       title: "Hiking & Exploration",
-      description: "Exploring new terrains and documenting geographic features for personal mapping projects.",
+      description: "Exploring natural terrains and documenting geographic features for personal map-making",
       color: "cyber-green"
     },
     {
       icon: Music,
       title: "Electronic Music",
-      description: "Creating ambient soundscapes and electronic music that complement coding sessions.",
+      description: "Enjoying ambient and experimental electronic music — perfect for focus and deep work while coding or designing",
       color: "cyber-purple"
     },
-    {
-      icon: BookOpen,
-      title: "Technology Books",
-      description: "Reading about emerging technologies, spatial computing, and future of digital mapping.",
-      color: "cyber-pink"
-    },
+    // {
+    //   icon: BookOpen,
+    //   title: "Technology Books",
+    //   description: "Reading about emerging technologies, spatial computing, and future of digital mapping.",
+    //   color: "cyber-pink"
+    // },
     {
       icon: Gamepad2,
       title: "Gaming",
-      description: "Strategy games and open-world exploration games that feature detailed mapping systems.",
+      description: "Enjoying strategy and open-world games with rich, map-driven environments",
       color: "cyber-cyan"
     },
-    {
-      icon: Coffee,
-      title: "Coffee Culture",
-      description: "Discovering local coffee shops and studying urban development patterns through café mapping.",
-      color: "cyber-green"
-    },
-    {
-      icon: Palette,
-      title: "Digital Art",
-      description: "Creating data visualizations and infographic designs for complex geographic information.",
-      color: "cyber-purple"
-    },
-    {
-      icon: Compass,
-      title: "Navigation Sports",
-      description: "Orienteering and geocaching activities that combine technology with outdoor adventures.",
-      color: "cyber-pink"
-    }
+    // {
+    //   icon: Coffee,
+    //   title: "Coffee Culture",
+    //   description: "Discovering local coffee shops and studying urban development patterns through café mapping.",
+    //   color: "cyber-green"
+    // },
+    // {
+    //   icon: Palette,
+    //   title: "Digital Art",
+    //   description: "Creating data visualizations and infographic designs for complex geographic information.",
+    //   color: "cyber-purple"
+    // },
+    // {
+    //   icon: Compass,
+    //   title: "Navigation Sports",
+    //   description: "Orienteering and geocaching activities that combine technology with outdoor adventures.",
+    //   color: "cyber-pink"
+    // }
   ];
 
   const getColorClasses = (color: string) => {
@@ -83,7 +83,7 @@ const Interests = () => {
           </h2>
           <div className="w-24 h-1 bg-cyber-cyan mx-auto rounded-full" />
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Beyond coding and GIS development, I explore diverse interests that inspire creativity and fuel innovation
+            Outside of coding and GIS development, I enjoy creative and immersive activities that shape the way I think, solve problems, and build meaningful spatial experiences
           </p>
         </motion.div>
 
@@ -162,11 +162,10 @@ const Interests = () => {
             </h3>
             
             <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              I believe that the best technological solutions come from understanding the world around us. 
-              My diverse interests in photography, exploration, and creative pursuits directly influence 
-              my approach to GIS development and mobile application design. Each adventure and creative 
-              project teaches me something new about spatial relationships, user experience, and the 
-              intersection of technology with human needs.
+              I believe meaningful technology begins with understanding people and places. 
+              My passion for photography, exploration, and creative projects allows me to 
+              view GIS as more than just maps or code — it's a powerful medium to tell stories, 
+              solve real problems, and bridge ideas with the needs of the world around us.
             </p>
           </div>
         </motion.div>
@@ -179,7 +178,7 @@ const Interests = () => {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
               { number: "500+", label: "Photos Taken", color: "cyber-cyan" },
               { number: "25+", label: "Hiking Trails", color: "cyber-green" },
@@ -203,7 +202,7 @@ const Interests = () => {
                 <div className="text-gray-400 text-sm">{fact.label}</div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Spotify Playlists Section */}
@@ -224,51 +223,30 @@ const Interests = () => {
             </p>
           </motion.div>
 
-          <div className="grid max-[360px]:justify-items-center gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-7xl mx-auto">
-            <div className="col-span-2 xl:col-span-3 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
-              <iframe 
-                src="https://open.spotify.com/embed/playlist/4owsB0rW55ReJqnCsjOzXT?utm_source=generator" 
-                width="100%" 
-                height="352" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"
-                style={{ border: 'none' }}>
-              </iframe>
-            </div>
+          <div className="w-full flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl w-full px-4">
+              {/* Playlist 1 */}
+              <div className="flex justify-center bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden p-4">
+                <iframe
+                  className="rounded-xl w-full max-w-md h-[352px] border-none"
+                  src="https://open.spotify.com/embed/playlist/2VI9qnSZo4ABfGDxb2uZIc?utm_source=generator&theme=0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
 
-            <div className="col-span-2 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
-              <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/playlist/2VI9qnSZo4ABfGDxb2uZIc?utm_source=generator" 
-                width="100%" 
-                height="352" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"
-                style={{ border: 'none' }}>
-              </iframe>
-            </div>
-
-            <div className="col-span-2 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
-              <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/playlist/7vUylkUvrdaCcKWfjeFfDp?utm_source=generator&theme=0" 
-                width="100%" 
-                height="352" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"
-                style={{ border: 'none' }}>
-                </iframe>
-            </div>
-
-            <div className="col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-3 2xl:col-span-3 bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden">
-              <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/playlist/61JXz3pdsB8RLhLADJL9IZ?utm_source=generator" 
-                width="100%" 
-                height="352" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy"
-                style={{ border: 'none' }}>
-              </iframe>
+              {/* Playlist 2 */}
+              <div className="flex justify-center bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden p-4">
+                <iframe
+                  className="rounded-xl w-full max-w-md h-[352px] border-none"
+                  src="https://open.spotify.com/embed/playlist/37i9dQZF1EQpj7X7UK8OOF?utm_source=generator&theme=0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
