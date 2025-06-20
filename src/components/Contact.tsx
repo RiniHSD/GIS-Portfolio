@@ -24,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch("https://xxxxCredentials", {
+      const response = await fetch(process.env.URL, {
         method: "POST",
         headers: {
           Accept: "application/json",
