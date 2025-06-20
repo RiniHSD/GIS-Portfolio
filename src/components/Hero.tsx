@@ -155,8 +155,8 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-10 md:py-0">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-dark-gradient" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1),transparent_70%)]" />
+      <div className="absolute inset-0 bg-dark" />
+      <div className="absolute inset-0 bg-dark" />
       
       {/* Floating Geometric Elements */}
       <motion.div

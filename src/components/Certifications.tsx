@@ -5,20 +5,26 @@ import { Award, Calendar, ExternalLink, CheckCircle } from 'lucide-react';
 const Certifications = () => {
   const certifications = [
     {
+      title: "Inspiring Bootcamp In Spatial Planning",
+      issuer: "PPSDM Kementerian ATR/BPN",
+      date: "2024",
+      credentialId: "Ke2iBMYyHu",
+      skills: ["Spatial Planning", "Urban Planning", "Infrastructure", "GIS"],
+      verified: true,
+      image: "/certifications/spatialplanning.png"
+    },
+    {
       title: "Practice Exam 3 for AWS Certified Developer - Associate (DVA-C02)",
       issuer: "Linkedin Learning",
       date: "2024",
-      //credentialId: "ARC-2023-RH-001",
       skills: ["AWS", "Cloud Computing"],
       verified: true,
-      image: "/certifications/aws.jpg" // Path ke gambar
+      image: "/certifications/aws.jpg"
     },
     {
       title: "Geospatial Data Analytics Essential Training",
       issuer: "Linkedin Learning",
       date: "2025",
-      //description: "Comprehensive certification covering React Native development, performance optimization, and platform-specific implementations.",
-      //credentialId: "RN-2022-DEV-456",
       skills: ["Geospatial Data", "Geographic Information System (GIS)", "Python"],
       verified: true,
       image: "/certifications/geospatial.jpg"
@@ -27,41 +33,19 @@ const Certifications = () => {
       title: "Hands-On PostgreSQL Project Spatial Data Science",
       issuer: "LinkedIn Learning",
       date: "2025",
-      //credentialId: "GMP-2022-789",
       skills: ["DBeaver", "Data Manipulation", "Geographic Information System (GIS)"],
       verified: true,
       image: "/certifications/postgresql.jpg"
     },
     {
-      title: "Inspiring Bootcamp In Spatial Planning",
-      issuer: "PPSDM Kementerian ATR/BPN",
-      date: "2024",
-      //description: "Foundation-level certification demonstrating cloud computing knowledge and AWS platform understanding.",
-      credentialId: "Ke2iBMYyHu",
-      skills: ["Spatial Planning", "Urban Planning", "Infrastructure", "GIS"],
-      verified: true,
-      image: "/certifications/spatialplanning.png"
-    },
-    {
       title: "Bootcamp In Remote Sensing and Mapping",
       issuer: "Aksara Lab",
       date: "2024",
-      //description: "Professional certification in MongoDB database design, development, and optimization.",
       credentialId: "1278/ABI/VII/2024",
       skills: ["Cloud Computing", "Mapping", "Remote Sensing", "Google Earth Engine"],
       verified: true,
       image: "/certifications/mapping.jpg"
-    },
-    // {
-    //   title: "Scrum Master Certified",
-    //   issuer: "Scrum Alliance",
-    //   date: "2022",
-    //   description: "Agile methodology certification focusing on Scrum framework, team leadership, and project management.",
-    //   credentialId: "CSM-2022-567",
-    //   skills: ["Scrum", "Agile", "Project Management", "Team Leadership"],
-    //   verified: true,
-    //   image: "/certifications/scrum-cert.png"
-    // }
+    }
   ];
 
   return (
@@ -81,7 +65,7 @@ const Certifications = () => {
           </h2>
           <div className="w-24 h-1 bg-cyber-cyan mx-auto rounded-full" />
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Professional certifications and credentials that validate expertise across various technologies and methodologies
+            Courses and certifications I've completed to strengthen my skills in GIS, spatial planning, and software development
           </p>
         </motion.div>
 
@@ -186,15 +170,6 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <motion.button
-                  className="w-full flex items-center justify-center px-4 py-2 bg-transparent border border-cyber-cyan/30 text-cyber-cyan rounded-lg hover:border-cyber-cyan hover:bg-cyber-cyan/10 transition-all duration-300 text-sm mt-auto"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <ExternalLink size={16} className="mr-2" />
-                  View Credential
-                </motion.button>
               </motion.div>
             </motion.div>
           ))}

@@ -36,6 +36,39 @@ const Projects = () => {
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Platform",
       icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Platform",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Platform",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Platform",
+      icon: MapPin
     }
   ];
 
