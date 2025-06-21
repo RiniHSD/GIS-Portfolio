@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, MapPin, Smartphone, Globe, Drone } from 'lucide-react';
+import { ExternalLink, Github, MapPin, Smartphone, Globe, Map } from 'lucide-react';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Surveyor');
   const projectCategories = [
     {
       name: "GIS Analyst",
-      icon: Globe,
-      count: 6 // Jumlah project untuk kategori ini
+      icon: Map,
+      count: 3
     },
     {
       name: "Surveyor",
@@ -23,137 +23,107 @@ const Projects = () => {
   ];
 
   const projects = [
+    // Surveyor
     {
-      title: "Map Projects",
-      description: "Aplikasi PRESISI untuk pemetaan batas desa",
-      image: "https://project-gis-rini.vercel.app/images/6.png",
-      technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
-      features: ["Real-time Navigation", "Public Transport", "Accessibility", "Offline Maps"],
-      demoUrl: "https://project-gis-rini.vercel.app/images/6.png",
-      githubUrl: "https://github.com/RiniHSD",
-      category: "Surveyor",
-      icon: MapPin
-    },
-    {
-      title: "Field Survey",
-      description: "Uji akurasi GNSS RTK Dalam Negeri",
-      image: "https://project-gis-rini.vercel.app/images/5.png",
-      technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
-      features: ["Real-time Data", "Predictive Analytics", "Interactive Maps", "Report Generation"],
+      title: "Data Aquisition and Mapping",
+      description: "Conducted data acquisition through aerial photography and field surveys on population and land use in Padukuhan Canden, Ngargosari Village, Samigaluh District, Kulon Progo Regency, DIY",
+      image: "https://project-gis-rini.vercel.app/images/31.png",
+      technologies: ["ArcGIS", "StoryMaps", "Drone Deploy", "ODK Collect"],
+      features: ["Aerial image acquisition", "Population and land use field surveys", "GNSS geodetic data collection", "StoryMap-based data visualization"],
       demoUrl: "https://storymaps.arcgis.com/stories/cda2b0bdd6f64cf49f93ba6b8c76d56f",
       githubUrl: "https://github.com/RiniHSD",
       category: "Surveyor",
       icon: MapPin
     },
     {
-      title: "App Development",
-      description: "Aplikasi AIRIS services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://project-gis-rini.vercel.app/images/8.png",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "GNSS RTK Accuracy Test",
+      description: "Collaborative project between Universitas Gadjah Mada and PT Techno GIS Indonesia to test the positional accuracy of a locally-produced GNSS RTK receiver",
+      image: "https://project-gis-rini.vercel.app/images/33.png",
+      technologies: ["GNSS RTK", "Surveying", "ArcGIS", "Total Station"],
+      features: ["Centimeter-level accuracy testing", "Field data validation", "Affordable local technology development", "Cost-efficient alternative to imported GNSS (55M vs 150M+)"],
+      demoUrl: "https://dtk.sv.ugm.ac.id/inovasi-teknologi-pemetaan-launching-produk-presisi-untuk-penetapan-dan-penegasan-batas-desa/",
       githubUrl: "https://github.com/RiniHSD",
       category: "Surveyor",
       icon: MapPin
     },
     {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://project-gis-rini.vercel.app/images/7.png",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "Aerial Mapping", 
+      description: "Conducted an aerial photogrammetry project over the Universitas Gadjah Mada campus field. Collected UAV imagery and ground control points (GCPs) for orthophoto generation",
+      image: "https://project-gis-rini.vercel.app/images/32.png",
+      technologies: ["DJI Mavic 2 Pro", "GNSS Leica", "Drone Deploy", "Agisoft Metashape"],
+      features: ["Aerial imagery acquisition", "GCP measurement", "Automated flight planning", "Orthophoto and 3D model"],
+      demoUrl: "https://project-gis-rini.vercel.app/images/32.png",
       githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Analyst",
+      category: "Surveyor",
       icon: MapPin
     },
+    // GIS Analyst
     {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "RDTR Mapping",
+      description: "Created base maps and thematic layers for the Detailed Spatial Plan (RDTR) of IKK Lubuk Tarok, Sijunjung Regency, during an internship at the Ministry of ATR/BPN. Contributed to spatial structure planning and technical documentation",
+      image: "https://project-gis-rini.vercel.app/images/52.png",
+      technologies: ["ArcGIS", "QGIS", "Microsoft Word"],
+      features: ["Base map revision and digitization", "Land use and spatial pattern analysis", "RDTR document drafting (2024-2044)"],
+      demoUrl: "https://project-gis-rini.vercel.app/images/52.png",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Analyst",
-      icon: MapPin
+      icon: Map
     },
     {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "Environmental and Land Cover Analysis",
+      description: "Performed multi-platform spatial analysis using ArcGIS, ENVI, and Google Earth Engine. Project outputs include NDVI classification, land cover change detection, and urban expansion modeling",
+      image: "https://project-gis-rini.vercel.app/images/51.png",
+      technologies: ["ArcGIS", "ENVI", "Google Earth Engine", "SAGA GIS"],
+      features: ["NDVI and LULC classification", "Change detection using multi-temporal imagery", "Cloud-based analysis with GEE JavaScript API", "Raster calculation and supervised classification"],
+      demoUrl: "https://project-gis-rini.vercel.app/images/51.png",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Analyst",
-      icon: MapPin
+      icon: Map
     },
     {
-      title: "Map Projects",
-      description: "Aplikasi PRESISI untuk pemetaan batas desa",
-      image: "https://project-gis-rini.vercel.app/images/6.png",
-      technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
-      features: ["Real-time Navigation", "Public Transport", "Accessibility", "Offline Maps"],
-      demoUrl: "https://project-gis-rini.vercel.app/images/6.png",
+      title: "Map Album of Generation",
+      description: "Designed and compiled a comprehensive thematic map album, covering topography, land use, accessibility, and public facilities in Pajangan District, Bantul Regency",
+      image: "https://project-gis-rini.vercel.app/images/53.jpg",
+      technologies: ["ArcGIS", "RBI Map", "BPS Data"],
+      features: ["Topographic and land use mapping", "Multi-page map layout design", "Printed & digital album output"],
+      demoUrl: "https://drive.google.com/file/d/1Muu2iEImjb70QqBep6yhWSpUox1QPXmR/view",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Analyst",
-      icon: MapPin
+      icon: Map
     },
+    // GIS Developer
     {
-      title: "Field Survey",
-      description: "Uji akurasi GNSS RTK Dalam Negeri",
-      image: "https://project-gis-rini.vercel.app/images/5.png",
-      technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
-      features: ["Real-time Data", "Predictive Analytics", "Interactive Maps", "Report Generation"],
-      demoUrl: "https://storymaps.arcgis.com/stories/cda2b0bdd6f64cf49f93ba6b8c76d56f",
-      githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Analyst",
-      icon: MapPin
-    },
-    {
-      title: "App Development",
-      description: "Aplikasi AIRIS services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://project-gis-rini.vercel.app/images/8.png",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Analyst",
-      icon: MapPin
-    },
-    {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://project-gis-rini.vercel.app/images/7.png",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "PRESISI",
+      description: "A patented mobile-based mapping application for village boundary delineation. It integrates GNSS geodetic tools to achieve high-accuracy spatial mapping",
+      image: "https://project-gis-rini.vercel.app/images/42.png",
+      technologies: ["JavaScript", "React Native", "GNSS Integration", "PostgreSQL"],
+      features: ["GNSS-integrated boundary mapping", "High-accuracy spatial processing", "HKI-registered geospatial innovation"],
+      demoUrl: "https://github.com/PRESISI-APK",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Developer",
-      icon: MapPin
+      icon: Smartphone
     },
     {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "AIRIS",
+      description: "A mobile GIS application to map and inventory irrigation networks in real-time using low-cost GNSS integration. Built with React Native and designed to support centimeter-level spatial accuracy and offline field data collection",
+      image: "https://project-gis-rini.vercel.app/images/41.png",
+      technologies: ["React Native", "GNSS Integration", "JavaScript", "PostgreSQL"],
+      features: ["Real-time mapping of irrigation channels", "RTK-based coordinate correction with NTRIP", "GNSS geodetic low-cost device integration"],
+      demoUrl: "https://github.com/RiniHSD/AIRIS",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Developer",
-      icon: MapPin
+      icon: Smartphone
     },
     {
-      title: "App Development",
-      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
-      image: "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
-      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
-      demoUrl: "#",
+      title: "GeoRoad Report",
+      description: "A mobile GIS application for reporting damaged roads in Siak Regency, Riau Province. Developed as part of a practical course project using open-source tools and government data",
+      image: "https://project-gis-rini.vercel.app/images/43.png",
+      technologies: ["JavaScript", "Leaflet", "App Script", "Google Sheets"],
+      features: ["User-submitted road damage reports", "Dynamic map visualization with Leaflet", "Integrated with live Google Sheets database", "Data analysis based on BPS statistics (2022)"],
+      demoUrl: "https://github.com/RiniHSD/GeoRoad-Report",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Developer",
-      icon: MapPin
+      icon: Smartphone
     }
   ];
 
@@ -262,7 +232,7 @@ const Projects = () => {
                         >
                           <ExternalLink size={16} />
                         </motion.a>
-                        <motion.a
+                        {/* <motion.a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -271,7 +241,7 @@ const Projects = () => {
                           whileTap={{ scale: 0.95 }}
                         >
                           <Github size={16} />
-                        </motion.a>
+                        </motion.a> */}
                       </div>
                     </div>
 
