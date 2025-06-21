@@ -1,29 +1,70 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, MapPin, Smartphone, Globe, Drone } from 'lucide-react';
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState<string>('Surveyor');
+  const projectCategories = [
+    {
+      name: "GIS Analyst",
+      icon: Globe,
+      count: 6 // Jumlah project untuk kategori ini
+    },
+    {
+      name: "Surveyor",
+      icon: MapPin,
+      count: 3
+    },
+    {
+      name: "GIS Developer",
+      icon: Smartphone,
+      count: 3
+    }
+  ];
+
   const projects = [
     {
       title: "Map Projects",
-      description: "A comprehensive mobile application for urban navigation with real-time traffic data, public transport integration, and accessibility features.",
-      image: "https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Aplikasi PRESISI untuk pemetaan batas desa",
+      image: "https://project-gis-rini.vercel.app/images/6.png",
       technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
       features: ["Real-time Navigation", "Public Transport", "Accessibility", "Offline Maps"],
-      demoUrl: "https://drive.google.com/file/d/1Muu2iEImjb70QqBep6yhWSpUox1QPXmR/view",
+      demoUrl: "https://project-gis-rini.vercel.app/images/6.png",
       githubUrl: "https://github.com/RiniHSD",
-      category: "Mobile App",
+      category: "Surveyor",
       icon: MapPin
     },
     {
       title: "Field Survey",
-      description: "Interactive web platform for monitoring environmental data with real-time sensor integration and predictive analytics.",
-      image: "https://images.pexels.com/photos/2058993/pexels-photo-2058993.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Uji akurasi GNSS RTK Dalam Negeri",
+      image: "https://project-gis-rini.vercel.app/images/5.png",
       technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
       features: ["Real-time Data", "Predictive Analytics", "Interactive Maps", "Report Generation"],
       demoUrl: "https://storymaps.arcgis.com/stories/cda2b0bdd6f64cf49f93ba6b8c76d56f",
       githubUrl: "https://github.com/RiniHSD",
-      category: "Field Survey",
+      category: "Surveyor",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Aplikasi AIRIS services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://project-gis-rini.vercel.app/images/8.png",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "Surveyor",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://project-gis-rini.vercel.app/images/7.png",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Analyst",
       icon: MapPin
     },
     {
@@ -34,7 +75,7 @@ const Projects = () => {
       features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
       demoUrl: "#",
       githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Platform",
+      category: "GIS Analyst",
       icon: MapPin
     },
     {
@@ -45,7 +86,51 @@ const Projects = () => {
       features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
       demoUrl: "#",
       githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Platform",
+      category: "GIS Analyst",
+      icon: MapPin
+    },
+    {
+      title: "Map Projects",
+      description: "Aplikasi PRESISI untuk pemetaan batas desa",
+      image: "https://project-gis-rini.vercel.app/images/6.png",
+      technologies: ["React Native", "Google Maps API", "Firebase", "Node.js"],
+      features: ["Real-time Navigation", "Public Transport", "Accessibility", "Offline Maps"],
+      demoUrl: "https://project-gis-rini.vercel.app/images/6.png",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Analyst",
+      icon: MapPin
+    },
+    {
+      title: "Field Survey",
+      description: "Uji akurasi GNSS RTK Dalam Negeri",
+      image: "https://project-gis-rini.vercel.app/images/5.png",
+      technologies: ["React", "ArcGIS API", "Python", "PostgreSQL"],
+      features: ["Real-time Data", "Predictive Analytics", "Interactive Maps", "Report Generation"],
+      demoUrl: "https://storymaps.arcgis.com/stories/cda2b0bdd6f64cf49f93ba6b8c76d56f",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Analyst",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Aplikasi AIRIS services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://project-gis-rini.vercel.app/images/8.png",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Analyst",
+      icon: MapPin
+    },
+    {
+      title: "App Development",
+      description: "Comprehensive platform for location-based services with geofencing, analytics, and custom mapping solutions.",
+      image: "https://project-gis-rini.vercel.app/images/7.png",
+      technologies: ["React", "Leaflet", "Node.js", "MongoDB"],
+      features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/RiniHSD",
+      category: "GIS Developer",
       icon: MapPin
     },
     {
@@ -56,7 +141,7 @@ const Projects = () => {
       features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
       demoUrl: "#",
       githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Platform",
+      category: "GIS Developer",
       icon: MapPin
     },
     {
@@ -67,10 +152,15 @@ const Projects = () => {
       features: ["Geofencing", "Analytics Dashboard", "Custom Maps", "API Integration"],
       demoUrl: "#",
       githubUrl: "https://github.com/RiniHSD",
-      category: "GIS Platform",
+      category: "GIS Developer",
       icon: MapPin
     }
   ];
+
+
+  const filteredProjects = projects.filter(
+    project => project.category === activeCategory
+  );
 
   return (
     <section id="projects" className="py-20 relative">
@@ -93,119 +183,151 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="flex flex-wrap justify-center gap-6 mb-12">
+          {projectCategories.map((category) => (
             <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="group relative"
+              key={category.name}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`cursor-pointer p-6 rounded-xl border-2 ${
+                activeCategory === category.name
+                  ? 'bg-cyber-cyan/10 border-cyber-cyan'
+                  : 'bg-cyber-dark/50 border-cyber-cyan/20'
+              }`}
+              onClick={() => setActiveCategory(category.name)}
             >
-              <motion.div
-                className="bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden hover:border-cyber-cyan/60 transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: '0 20px 40px rgba(0, 255, 255, 0.1)'
-                }}
-              >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyber-black/80 via-transparent to-transparent" />
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <motion.div
-                      className="flex items-center px-3 py-1 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <project.icon size={16} className="text-cyber-cyan mr-2" />
-                      <span className="text-cyber-cyan text-sm font-medium">{project.category}</span>
-                    </motion.div>
-                  </div>
-
-                  {/* Overlay Links */}
-                  <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <motion.a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full text-cyber-cyan hover:border-cyber-cyan hover:scale-110 transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink size={16} />
-                    </motion.a>
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full text-cyber-cyan hover:border-cyber-cyan hover:scale-110 transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Github size={16} />
-                    </motion.a>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyber-cyan transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-cyber-cyan mb-2">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-1 text-xs">
-                      {project.features.map((feature, featureIndex) => (
-                        <motion.div
-                          key={feature}
-                          className="flex items-center text-gray-400"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <div className="w-1 h-1 bg-cyber-cyan rounded-full mr-2" />
-                          {feature}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <motion.span
-                        key={tech}
-                        className="px-2 py-1 bg-cyber-black/50 border border-cyber-purple/30 rounded text-xs text-cyber-purple"
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: techIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05, borderColor: 'rgba(139, 92, 246, 0.6)' }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+              <div className="flex items-center">
+                <category.icon className="text-cyber-cyan mr-3" size={24} />
+                <h3 className="text-xl font-bold text-white">{category.name}</h3>
+              </div>
+              <p className="mt-2 text-cyber-cyan">{category.count} Projects</p>
             </motion.div>
           ))}
         </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={`${project.title}-${index}`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  <motion.div
+                    className="bg-cyber-dark/30 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl overflow-hidden hover:border-cyber-cyan/60 transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.02,
+                      boxShadow: '0 20px 40px rgba(0, 255, 255, 0.1)'
+                    }}
+                  >
+                    {/* Project Image */}
+                    <div className="relative h-64 overflow-hidden">
+                      <motion.img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyber-black/80 via-transparent to-transparent" />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <motion.div
+                          className="flex items-center px-3 py-1 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <project.icon size={16} className="text-cyber-cyan mr-2" />
+                          <span className="text-cyber-cyan text-sm font-medium">{project.category}</span>
+                        </motion.div>
+                      </div>
+
+                      {/* Overlay Links */}
+                      <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <motion.a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full text-cyber-cyan hover:border-cyber-cyan hover:scale-110 transition-all duration-300"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <ExternalLink size={16} />
+                        </motion.a>
+                        <motion.a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-cyber-dark/80 backdrop-blur-sm border border-cyber-cyan/30 rounded-full text-cyber-cyan hover:border-cyber-cyan hover:scale-110 transition-all duration-300"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Github size={16} />
+                        </motion.a>
+                      </div>
+                    </div>
+
+                    {/* Project Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyber-cyan transition-colors">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+
+                      {/* Features */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-cyber-cyan mb-2">Key Features:</h4>
+                        <div className="grid grid-cols-2 gap-1 text-xs">
+                          {project.features.map((feature, featureIndex) => (
+                            <motion.div
+                              key={feature}
+                              className="flex items-center text-gray-400"
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
+                              viewport={{ once: true }}
+                            >
+                              <div className="w-1 h-1 bg-cyber-cyan rounded-full mr-2" />
+                              {feature}
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <motion.span
+                            key={tech}
+                            className="px-2 py-1 bg-cyber-black/50 border border-cyber-purple/30 rounded text-xs text-cyber-purple"
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: techIndex * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.05, borderColor: 'rgba(139, 92, 246, 0.6)' }}
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Call to Action */}
         <motion.div

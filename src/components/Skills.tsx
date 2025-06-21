@@ -123,14 +123,12 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-cyber-dark/20 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl p-8 max-w-4xl mx-auto">
+          {/* <div className="bg-cyber-dark/20 backdrop-blur-sm border border-cyber-cyan/20 rounded-xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
               Always Learning & Growing
             </h3>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Technology evolves rapidly, and I'm committed to continuous learning. Currently exploring 
-              advanced GIS analytics, machine learning applications in geospatial data, and emerging 
-              mobile development frameworks.
+              Always exploring GIS analytics, geospatial ML, and mobile dev tools — because growth never stops.
             </p>
             
             <div className="flex flex-wrap justify-center gap-3">
@@ -148,7 +146,7 @@ const Skills = () => {
                 </motion.span>
               ))}
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

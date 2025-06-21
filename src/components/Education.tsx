@@ -5,7 +5,7 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 const Education = () => {
   const education = [
     {
-      degree: "Bachelor's Degree in Geographic Information Systems",
+      degree: "Bachelor of Applied Science in Geographic Information Systems",
       institution: "Universitas Gadjah Mada",
       location: "Indonesia",
       period: "2021 - 2025",

@@ -263,7 +263,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-cyber-black/50 border border-cyber-cyan/30 rounded-lg text-white placeholder-gray-400 focus:border-cyber-cyan focus:outline-none focus:ring-2 focus:ring-cyber-cyan/20 transition-all duration-300"
-                      placeholder="Your name"
+                      placeholder="Full name"
                     />
                   </motion.div>
                   
@@ -283,7 +283,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-cyber-black/50 border border-cyber-cyan/30 rounded-lg text-white placeholder-gray-400 focus:border-cyber-cyan focus:outline-none focus:ring-2 focus:ring-cyber-cyan/20 transition-all duration-300"
-                      placeholder="your.email@example.com"
+                      placeholder="Enter your email address"
                     />
                   </motion.div>
                 </div>
@@ -304,7 +304,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-cyber-black/50 border border-cyber-cyan/30 rounded-lg text-white placeholder-gray-400 focus:border-cyber-cyan focus:outline-none focus:ring-2 focus:ring-cyber-cyan/20 transition-all duration-300"
-                    placeholder="Project inquiry / Collaboration / General"
+                    placeholder="What's this message about?"
                   />
                 </motion.div>
                 
@@ -324,7 +324,7 @@ const Contact = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 bg-cyber-black/50 border border-cyber-cyan/30 rounded-lg text-white placeholder-gray-400 focus:border-cyber-cyan focus:outline-none focus:ring-2 focus:ring-cyber-cyan/20 transition-all duration-300 resize-none"
-                    placeholder="Tell me about your project or how we can collaborate..."
+                    placeholder="Write your message here..."
                   />
                 </motion.div>
                 

@@ -60,7 +60,7 @@ const Experience = () => {
         "Delivered intensive training sessions on geographic concepts, data interpretation, and spatial reasoning",
         "Successfully mentored a student who won a Silver Medal at the 2024 KSM National Competition in Ternate, North Maluku",
       ],
-      technologies: ["Geographic Education", "Training", "Python", "Remote Mentoring"]
+      technologies: ["Geographic Education", "Training", "Remote Mentoring"]
     }
   ];
 
