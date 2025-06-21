@@ -8,17 +8,17 @@ const Projects = () => {
     {
       name: "GIS Analyst",
       icon: Map,
-      count: 3
+      
     },
     {
       name: "Surveyor",
       icon: MapPin,
-      count: 3
+      
     },
     {
       name: "GIS Developer",
       icon: Smartphone,
-      count: 3
+      
     }
   ];
 
@@ -81,7 +81,7 @@ const Projects = () => {
       icon: Map
     },
     {
-      title: "Map Album of Generation",
+      title: "Album Map Generation",
       description: "Designed and compiled a comprehensive thematic map album, covering topography, land use, accessibility, and public facilities in Pajangan District, Bantul Regency",
       image: "https://project-gis-rini.vercel.app/images/53.jpg",
       technologies: ["ArcGIS", "RBI Map", "BPS Data"],
@@ -170,7 +170,7 @@ const Projects = () => {
                 <category.icon className="text-cyber-cyan mr-3" size={24} />
                 <h3 className="text-xl font-bold text-white">{category.name}</h3>
               </div>
-              <p className="mt-2 text-cyber-cyan">{category.count} Projects</p>
+              {/* <p className="mt-2 text-cyber-cyan">{category.count} Projects</p> */}
             </motion.div>
           ))}
         </div>
