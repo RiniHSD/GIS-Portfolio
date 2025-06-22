@@ -64,7 +64,7 @@ const Projects = () => {
       image: "https://project-gis-rini.vercel.app/images/52.png",
       technologies: ["ArcGIS", "QGIS", "Microsoft Word"],
       features: ["Base map revision and digitization", "Land use and spatial pattern analysis", "RDTR document drafting (2024-2044)"],
-      demoUrl: "https://project-gis-rini.vercel.app/images/52.png",
+      demoUrl: "https://project-gis-rini.vercel.app/",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Analyst",
       icon: Map
@@ -75,7 +75,7 @@ const Projects = () => {
       image: "https://project-gis-rini.vercel.app/images/51.png",
       technologies: ["ArcGIS", "ENVI", "Google Earth Engine", "SAGA GIS"],
       features: ["NDVI and LULC classification", "Change detection using multi-temporal imagery", "Cloud-based analysis with GEE JavaScript API", "Raster calculation and supervised classification"],
-      demoUrl: "https://project-gis-rini.vercel.app/images/51.png",
+      demoUrl: "https://project-gis-rini.vercel.app/",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Analyst",
       icon: Map
