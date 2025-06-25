@@ -97,7 +97,7 @@ const Projects = () => {
       description: "A patented mobile-based mapping application for village boundary delineation. It integrates GNSS geodetic tools to achieve high-accuracy spatial mapping",
       image: "https://project-gis-rini.vercel.app/images/42.png",
       technologies: ["JavaScript", "React Native", "GNSS Integration", "PostgreSQL"],
-      features: ["GNSS-integrated boundary mapping", "High-accuracy spatial processing", "HKI-registered geospatial innovation"],
+      features: ["GNSS-integrated boundary mapping", "High-accuracy spatial processing", "🏆 HKI-registered geospatial innovation"],
       demoUrl: "https://pdki-indonesia.dgip.go.id/link/45433030323032343235383233357c636f70797269676874",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Developer",

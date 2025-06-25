@@ -147,7 +147,7 @@ const Experience = () => {
                     {exp.description}
                   </p>
 
-                  {exp.link && exp.title === "GIS Developer" && (
+                  {/* {exp.link && exp.title === "GIS Developer" && (
                     <p className="text-sm text-cyber-cyan underline mb-6">
                       🏆{" "}
                       <a
@@ -159,7 +159,7 @@ const Experience = () => {
                         Officially registered under Indonesia's HKI system
                       </a>
                     </p>
-                  )}
+                  )} */}
 
                   {/* Achievements */}
                   <div className="mb-6">
