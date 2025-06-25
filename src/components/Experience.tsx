@@ -28,8 +28,8 @@ const Experience = () => {
       type: "Academic",
       description: "Assisted undergraduate students in two programming-related courses as a teaching assistant. Helped facilitate learning through code reviews, debugging, and hands-on guidance during lab sessions",
       achievements: [
-        "Facilitated practical sessions for 62 GIS students in Computer Programming (VB.Net, C#, Python, Java, HTML/CSS, JavaScript, PHP)",
-        "Guided 61 students in developing mobile applications using React Native and Ionic for Advanced Mobile Geospatial Programming",
+        "Facilitated practical sessions for 62 GIS student's batch 2024 in Computer Programming (VB.Net, C#, Python, Java, HTML/CSS, JavaScript, PHP)",
+        "Guided 61 student's batch 2022 in developing mobile applications using React Native and Ionic for Advanced Mobile Geospatial Programming",
         "Supported students' understanding of core programming concepts through collaborative exercises and live coding demonstrations",
       ],
       technologies: ["Python", "React Native", "Ionic", "VB.Net", "C#", "Java", "HTML/CSS", "JavaScript", "PHP"]
