@@ -2,7 +2,7 @@
 ### Frontend
 1. Clone repositori ini:
    ```bash
-   git clone https://github.com/RiniHSD/GIS-Porfolio.git
+   git clone https://github.com/RiniHSD/GIS-Portfolio.git
 
 2. Install semua dependensi:
    ```bash

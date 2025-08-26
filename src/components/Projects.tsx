@@ -104,7 +104,7 @@ const Projects = () => {
       icon: Smartphone
     },
     {
-      title: "AIRIS",
+      title: "AIRISMAP",
       description: "A mobile GIS application to map and inventory irrigation networks in real-time using low-cost GNSS integration. Built with React Native and designed to support centimeter-level spatial accuracy and offline field data collection",
       image: "https://project-gis-rini.vercel.app/images/41.png",
       technologies: ["React Native", "GNSS Integration", "JavaScript", "PostgreSQL"],

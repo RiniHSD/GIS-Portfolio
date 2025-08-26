@@ -58,7 +58,7 @@ const About = () => {
             </h3>
             
             <p className="text-gray-300 leading-relaxed">
-              As a final-year GIS student with a passion for geospatial development, I focus on 
+              As a GIS graduate with a passion for geospatial development, I focus on 
               building mobile and web-based mapping applications that make spatial data more 
               accessible and useful. My academic and internship experiences include working 
               with GNSS-based field data collection, spatial data processing, 
