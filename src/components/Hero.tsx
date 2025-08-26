@@ -6,7 +6,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isMobile, setIsMobile] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const fullText = 'GIS Developer | GIS Analyst | Fresh Graduate in GIS';
+  const fullText = 'GIS Developer | GIS Analyst | Fresh Graduate';
   
   // Referensi untuk kartu interaktif
   const cardRef = useRef(null);
@@ -408,7 +408,7 @@ const Hero = () => {
               {/* Tombol CV */}
               <div className="relative z-10 w-full h-full flex flex-col items-center justify-end p-6 pb-8">
                 <a 
-                  href="/CV_RINIHUSADIYAH.pdf"
+                  href="/CV_RiniHusadiyah.pdf"
                   download
                   className="relative z-10 mt-auto px-8 py-3 bg-white/20 backdrop-blur-sm rounded-full text-black font-medium transition-all hover:bg-white/20 border border-white/30 shadow-lg"
                 >
