@@ -6,7 +6,7 @@ const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isMobile, setIsMobile] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const fullText = 'GIS Analyst | GIS Engineer | Surveyor';
+  const fullText = 'GIS Developer | GIS Analyst | Fresh Graduate in GIS';
   
   // Referensi untuk kartu interaktif
   const cardRef = useRef(null);
