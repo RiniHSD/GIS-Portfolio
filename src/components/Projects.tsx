@@ -109,7 +109,7 @@ const Projects = () => {
       image: "https://project-gis-rini.vercel.app/images/41.png",
       technologies: ["React Native", "GNSS Integration", "JavaScript", "PostgreSQL"],
       features: ["Real-time mapping of irrigation channels", "RTK-based coordinate correction with NTRIP", "GNSS geodetic low-cost device integration"],
-      demoUrl: "https://github.com/RiniHSD/AIRISMAP",
+      demoUrl: "https://pdki-indonesia.dgip.go.id/link/45433030323032353230303534367c636f70797269676874",
       githubUrl: "https://github.com/RiniHSD",
       category: "GIS Developer",
       icon: Smartphone
